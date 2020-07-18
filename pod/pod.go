@@ -10,6 +10,7 @@ import (
 // Pod Pod
 type Pod struct {
 	APIVersion string            `yaml:"apiVersion,omitempty"`
+	Kind       string            `yaml:"kind,omitempty"`
 	Metadata   map[string]string `yaml:"metadata,omitempty"`
 	Spec       *podspec.PodSpec  `yaml:"spec,omitempty"`
 }
@@ -18,6 +19,7 @@ type Pod struct {
 func New() *Pod {
 	return &Pod{
 		Metadata: make(map[string]string),
+		Kind:     "Pod",
 	}
 }
 
